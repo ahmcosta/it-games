@@ -101,13 +101,13 @@ function handleCardDrop(event, ui) {
 	// again
 
 	if (slotNumber == cardNumber) {
-		ui.draggable.draggable('disable');
-		$(this).droppable('disable');
-		var color = $(this).css('background-color');
-		ui.draggable.position({ of: $(this), my: 'left top', at: 'left top' });
-		ui.draggable.draggable('option', 'revert', false);
-		ui.draggable.css('background-color', color);
-		$(this).css('height', ui.draggable.css('height'));
+		$(this).html($(ui.draggable).text());
+		// $(ui.draggable).copyCSS(this, null, ['background']);  // copy everything except top and left
+		$(this).css('color', ui.draggable.css('color'));
+		$(this).css('font-size', ui.draggable.css('font-size'));
+		$(this).css('text-shadow', ui.draggable.css('text-shadow'));
+		$(this).css('text-align', ui.draggable.css('text-align'));
+		ui.draggable.css('display', 'none');
 		correctCards++;
 	}
 
