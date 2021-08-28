@@ -6,7 +6,7 @@ var terms = [
 	{ id: '112',	term: 'Desenvolvimento e Gestão de Requisitos' },
 	{ id: '113',	term: 'Revisão por Par' },
 	{ id: '114',	term: 'Verificação e Validação' },
-	{ id: '12',		term: 'Engenharia e Desenvolvimento' },
+	{ id: '12',		term: 'Engenharia e Desenvolvimento de Produto' },
 	{ id: '121',	term: 'Solução Técnica' },
 	{ id: '122',	term: 'Integração de Produto' },
 	{ id: '13',		term: 'Seleção e Gestão de Fornecedores' },
@@ -57,15 +57,15 @@ function init() {
 
 	$('<div>' + "Categoria" + '</div>').appendTo('#cardSlots').css({
 		'background-color': 'black',
-		'color': 'white'
+		'color': 'white',
 	})
 	$('<div>' + "Área de Capacidade" + '</div>').appendTo('#cardSlots').css({
 		'background-color': 'black',
-		'color': 'white'
+		'color': 'white',
 	})
 	$('<div>' + "Área de Prática" + '</div>').appendTo('#cardSlots').css({
 		'background-color': 'black',
-		'color': 'white'
+		'color': 'white',
 	})
 	// Create the pile of shuffled cards
 	for (var i = 0; i < terms.length; i++) {
@@ -81,6 +81,7 @@ function init() {
 			drop: handleCardDrop
 		}).addClass('item' + terms[i].id);
 	}
+	// shuffle
 	$(function () {
 		var parent = $("#cardPile");
 		var divs = parent.children();
@@ -106,6 +107,7 @@ function handleCardDrop(event, ui) {
 		ui.draggable.position({ of: $(this), my: 'left top', at: 'left top' });
 		ui.draggable.draggable('option', 'revert', false);
 		ui.draggable.css('background-color', color);
+		$(this).css('height', ui.draggable.css('height'));
 		correctCards++;
 	}
 

@@ -1,8 +1,9 @@
 /* Add some margin to the page and set a default font and colour */
 
 body {
-  margin: 30px;
+  /* margin: 30px; */
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: smaller;
   line-height: 1.8em;
   color: #333;
 }
@@ -44,20 +45,18 @@ h4 {
   font-size: 1.5em;
 }
 
-/* Slots for final card positions */
-
-#cardSlots {
-  margin: 0 auto 3em auto;
-  background: #BDE0F4;
-  float: right;
-}
-
 /* The initial pile of unsorted cards */
-
 #cardPile {
   margin: 0 auto;
   background: green;
   float: left;
+}
+
+/* Slots for final card positions */
+#cardSlots {
+  margin: 0 auto 3em auto;
+  background: #BDE0F4;
+  float: right;
 }
 
 .t1       { grid-area: t1; background-color: white; }
@@ -103,7 +102,7 @@ h4 {
 #cardSlots,
 #cardPile {
   width: 47%;
-  height: 80%;
+  /* height: 80%; */
   padding: 0.85em;
   border: 2px solid #333;
   -moz-border-radius: 10px;
@@ -113,6 +112,7 @@ h4 {
   -webkit-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
   box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
   display: grid;
+  grid-auto-columns: 1fr;
   grid-template-areas:
     't1 t2  t3'
     'i1 i11 i111'
@@ -139,16 +139,16 @@ h4 {
     'i4 i42 i422'
     'i4 i42 i423'
   ;
-  grid-gap: 10px;
+  /* grid-gap: 10px; */
   align-items: center;
 }
 
 /* Individual cards and slots */
 #cardSlots div,
 #cardPile div {
-  float: left;
-  width: 160px;
-  height: 80px;
+  /* float: left; */
+  /* width: 3fr; */
+  /* height: 80px; */
   padding: 0.85em;
   padding-top: 10px;
   padding-bottom: 10px;
