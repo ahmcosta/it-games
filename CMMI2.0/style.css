@@ -1,0 +1,206 @@
+/* Add some margin to the page and set a default font and colour */
+
+body {
+  margin: 30px;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  line-height: 1.8em;
+  color: #333;
+}
+
+/* Give headings their own font */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+/* Main content area */
+
+#content {
+  margin: 80px 70px;
+  text-align: center;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Header/footer boxes */
+
+.wideBox {
+  clear: both;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  background: #ebedf2;
+  border: 1px solid #333;
+}
+
+.wideBox h1 {
+  font-weight: bold;
+  margin: 20px;
+  color: #666;
+  font-size: 1.5em;
+}
+
+/* Slots for final card positions */
+
+#cardSlots {
+  margin: 0 auto 3em auto;
+  background: #BDE0F4;
+  float: right;
+}
+
+/* The initial pile of unsorted cards */
+
+#cardPile {
+  margin: 0 auto;
+  background: green;
+  float: left;
+}
+
+.t1       { grid-area: t1; background-color: white; }
+.t2       { grid-area: t2; background-color: white; }
+.t3       { grid-area: t3; background-color: white; }
+.item1    { grid-area: i1; background-color: #F5811E; }
+.item11   { grid-area: i11; background-color: #822D19; }
+.item111  { grid-area: i111; background-color: #822D19; }
+.item112  { grid-area: i112; background-color: #822D19; }
+.item113  { grid-area: i113; background-color: #822D19; }
+.item114  { grid-area: i114; background-color: #822D19; }
+.item12   { grid-area: i12; background-color: #F05A26; }
+.item121  { grid-area: i121; background-color: #F05A26; }
+.item122  { grid-area: i122; background-color: #F05A26; }
+.item13   { grid-area: i13; background-color: #F8A51A; }
+.item131  { grid-area: i131; background-color: #F8A51A; }
+
+.item2    { grid-area: i2; background-color: #157F50; }
+.item21   { grid-area: i21; background-color: #157F50; }
+.item211  { grid-area: i211; background-color: #157F50; }
+.item212  { grid-area: i212; background-color: #157F50; }
+.item213  { grid-area: i213; background-color: #157F50; }
+.item22   { grid-area: i22; background-color: #1BA54F; }
+.item221  { grid-area: i221; background-color: #1BA54F; }
+.item23   { grid-area: i23; background-color: #6FC064; }
+.item231  { grid-area: i231; background-color: #6FC064; }
+
+.item3    { grid-area: i3; background-color: #2B7DC5; }
+.item31   { grid-area: i31; background-color: #2B7DC5; }
+.item311  { grid-area: i311; background-color: #2B7DC5; }
+.item312  { grid-area: i312; background-color: #2B7DC5; }
+.item313  { grid-area: i313; background-color: #2B7DC5; }
+
+.item4    { grid-area: i4; background-color: #8D55A1; }
+.item41   { grid-area: i41; background-color: #6D2A87; }
+.item411  { grid-area: i411; background-color: #6D2A87; }
+.item412  { grid-area: i412; background-color: #6D2A87; }
+.item42   { grid-area: i42; background-color: #B683BB; }
+.item421  { grid-area: i421; background-color: #B683BB; }
+.item422  { grid-area: i422; background-color: #B683BB; }
+.item423  { grid-area: i423; background-color: #B683BB; }
+
+#cardSlots,
+#cardPile {
+  width: 47%;
+  height: 80%;
+  padding: 0.85em;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0.3em rgba(0, 0, 0, 0.8);
+  display: grid;
+  grid-template-areas:
+    't1 t2  t3'
+    'i1 i11 i111'
+    'i1 i11 i112'
+    'i1 i11 i113'
+    'i1 i11 i114'
+    'i1 i12 i121'
+    'i1 i12 i122'
+    'i1 i13 i131'
+
+    'i2 i21 i211'
+    'i2 i21 i212'
+    'i2 i21 i213'
+    'i2 i22 i221'
+    'i2 i23 i231'
+
+    'i3 i31 i311'
+    'i3 i31 i312'
+    'i3 i31 i313'
+
+    'i4 i41 i411'
+    'i4 i41 i412'
+    'i4 i42 i421'
+    'i4 i42 i422'
+    'i4 i42 i423'
+  ;
+  grid-gap: 10px;
+  align-items: center;
+}
+
+/* Individual cards and slots */
+#cardSlots div,
+#cardPile div {
+  float: left;
+  width: 160px;
+  height: 80px;
+  padding: 0.85em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin: 10px;
+  /* background: #fff; */
+}
+
+/*#cardSlots div:first-child, #cardPile div:first-child {
+  margin-left: 0;
+}*/
+
+#cardSlots div.hovered {
+  background: #aaa;
+}
+
+#cardSlots div {
+  border-style: dashed;
+}
+
+#cardPile div {
+  background: #666;
+  color: #fff;
+  font-size: 1em;
+  text-shadow: 0 0 3px #000;
+  text-align: center;
+}
+
+#cardPile div.ui-draggable-dragging {
+  -moz-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.8);
+}
+
+/* "You did it!" message */
+#successMessage {
+  position: absolute;
+  left: 580px;
+  top: 250px;
+  width: 0;
+  height: 0;
+  z-index: 100;
+  background: #dfd;
+  border: 2px solid #333;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.8);
+  box-shadow: 0.3em 0.3em 0.5em rgba(0, 0, 0, 0.8);
+  padding: 20px;
+}
