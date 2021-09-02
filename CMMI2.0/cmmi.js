@@ -1,9 +1,16 @@
 var correctCards = 0;
 var terms = [
-	{ id: '1',		term: 'Execução' },
+	{
+		id: '1',
+		term: 'Execução',
+	},
 	{ id: '11',		term: 'Garantia de Qualidade' },
 	{ id: '111',	term: 'Garantia de Qualidade do Processo' },
-	{ id: '112',	term: 'Desenvolvimento e Gestão de Requisitos' },
+	{
+		id: '112',
+		term: 'Desenvolvimento e Gestão de Requisitos',
+		goal: 'Esclarecer os requisitos, assegurar entendimento comum pelas partes interessadas e alinhar os requisitos, planos e produtos de trabalho.'
+	},
 	{ id: '113',	term: 'Revisão por Par' },
 	{ id: '114',	term: 'Verificação e Validação' },
 	{ id: '12',		term: 'Engenharia e Desenvolvimento de Produto' },
@@ -95,11 +102,18 @@ function handleCardDrop(event, ui) {
 	var slotNumber = $(this).data('id');
 	var cardNumber = ui.draggable.data('id');
 
+	slotNumberDigits = slotNumber.length;
+	cardNumberDigits = cardNumber.length;
+
+	if (slotNumberDigits >= 3 && cardNumberDigits >= 3) {
+		slotNumber = Math.floor(slotNumber/10) * 10
+		cardNumber = Math.floor(cardNumber/10) * 10
+	}
+
 	// If the card was dropped to the correct slot,
 	// change the card colour, position it directly
 	// on top of the slot, and prevent it being dragged
 	// again
-
 	if (slotNumber == cardNumber) {
 		$(this).html($(ui.draggable).text());
 		// $(ui.draggable).copyCSS(this, null, ['background']);  // copy everything except top and left
