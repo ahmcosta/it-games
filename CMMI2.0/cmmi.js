@@ -1,3 +1,12 @@
+/* 
+	https://codepen.io/noyiri/pen/zeoRwB
+	https://www.w3schools.com/css/css_grid.asp
+	https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout#grid_tracks
+	https://jsfiddle.net/C6LPY/2/
+	https://nnattawat.github.io/flip/
+	https://consulting.itgonline.com/cmmi-consulting/cmmi-v2/
+*/ 
+
 var correctCards = 0;
 var terms = [
 	{
